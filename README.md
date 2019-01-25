@@ -1,2 +1,6 @@
 # dotfiles
-Current dotfiles as seen on my Manjaro i3 computer
+
+Some of my dotfiles
+- OS: Manjaro
+- WM: i3
+- Shell: bash
