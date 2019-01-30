@@ -1,6 +1,7 @@
 # dotfiles
 
-Some of my dotfiles
-- OS: Manjaro
-- WM: i3
-- Shell: bash
+Here are some of my dotfiles
+- **OS:** Manjaro Linux
+- **WM:** i3
+- **Shell:** bash
+- **Terminal:** urxvt
