@@ -53,8 +53,8 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # Screen brightness controls USING LIGHT
 bindsym XF86MonBrightnessUp exec "light -A 10; notify-send `light` -t 1000"
 bindsym XF86MonBrightnessDown exec "light -U 10; notify-send `light` -t 1000"
-bindsym $mod+XF86MonBrightnessUp exec "light -A 20; notify-send `light` -t 1000"
-bindsym $mod+XF86MonBrightnessDown exec "light -U 20; notify-send `light` -t 1000"
+bindsym $mod+XF86MonBrightnessUp exec "light -A 5; notify-send `light` -t 1000"
+bindsym $mod+XF86MonBrightnessDown exec "light -U 5; notify-send `light` -t 1000"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -195,7 +195,9 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
+# ------------------------------------------------ #
 # --- Open applications on specific workspaces --- #
+# ------------------------------------------------ #
 assign [class="Firefox"] $ws1
 
 # VS Code & IntelliJ IDEA
@@ -206,6 +208,8 @@ assign [class="Slack"] $ws4
 assign [title="Discord"] $ws4
 assign [class="Thunderbird"] $ws5
 for_window [class="Spotify"] move to workspace $ws6
+# ------------------------------------------------- #
+# ------------------------------------------------- #
 # ------------------------------------------------- #
 
 # Open specific applications in floating mode
@@ -397,7 +401,7 @@ bindsym $mod+m bar mode toggle
 
 # Set inner/outer gaps
 gaps inner 15
-gaps outer -2
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -450,7 +454,8 @@ mode "$mode_gaps_outer" {
 
 # --- TEMP CHANGES --- #
 #
-
+# PyPlot
+for_window [instance="matplotlib"] floating enable
 
 
 #
