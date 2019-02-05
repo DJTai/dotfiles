@@ -8,7 +8,7 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
+new_window pixel 2
 new_float normal
 
 # Hide borders
@@ -198,16 +198,21 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # ------------------------------------------------ #
 # --- Open applications on specific workspaces --- #
 # ------------------------------------------------ #
+
+
 assign [class="Firefox"] $ws1
 
 # VS Code & IntelliJ IDEA
 # assign [class="^Code$"] $ws2
 assign [class="jetbrains-idea-ce"] $ws2
+assign [class="Unity"] $ws2
 assign [class="GitKraken"] $ws3
 assign [class="Slack"] $ws4
 assign [title="Discord"] $ws4
 assign [class="Thunderbird"] $ws5
 for_window [class="Spotify"] move to workspace $ws6
+
+
 # ------------------------------------------------- #
 # ------------------------------------------------- #
 # ------------------------------------------------- #
@@ -225,6 +230,7 @@ for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable border normal
 for_window [title="MuseScore: Play Panel"] floating enable
+for_window [title="Network Connections"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
@@ -395,6 +401,7 @@ bindsym $mod+m bar mode toggle
 
   client.background       #2B2C2B
 
+
 #############################
 ### settings for i3-gaps: ###
 #############################
@@ -409,7 +416,7 @@ gaps outer 0
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+# smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
