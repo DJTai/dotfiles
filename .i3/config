@@ -311,6 +311,9 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+#systemctl --user enable redshift-gtk
+exec --no-startup-id redshift-gtk
 
 ## Load wallpaper
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
@@ -463,6 +466,7 @@ mode "$mode_gaps_outer" {
 #
 # PyPlot
 for_window [instance="matplotlib"] floating enable
+for_window [title="MP3 Player"] floating enable
 
 
 #
