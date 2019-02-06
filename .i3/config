@@ -203,7 +203,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 assign [class="Firefox"] $ws1
 
 # VS Code & IntelliJ IDEA
-# assign [class="^Code$"] $ws2
 assign [class="jetbrains-idea-ce"] $ws2
 assign [class="Unity"] $ws2
 assign [class="GitKraken"] $ws3
@@ -252,6 +251,8 @@ for_window [title="Thunderbird Preferences"] floating enable
 for_window [title="About Mozilla Thunderbird"] floating enable
 for_window [instance="Msgcompose" class="Thunderbird"] floating enable
 
+# IntelliJ IDEA
+for_window [title="Compare your solution with answer"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -297,9 +298,15 @@ mode "resize" {
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+
+        # Resize faster!
+        bindsym $mod+Left resize shrink width 50 px or 50 ppt
+        bindsym $mod+Up resize shrink height 50 px or 50 ppt
+        bindsym $mod+Right resize grow width 50 px or 50 ppt
+        bindsym $mod+Down resize grow height 50 px or 50 ppt
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"
@@ -327,7 +334,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-# exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 120 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
