@@ -51,10 +51,10 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 ################################################################################################
 
 # Screen brightness controls USING LIGHT
-bindsym XF86MonBrightnessUp exec "light -A 10; notify-send `light` -t 1000"
-bindsym XF86MonBrightnessDown exec "light -U 10; notify-send `light` -t 1000"
-bindsym $mod+XF86MonBrightnessUp exec "light -A 5; notify-send `light` -t 1000"
-bindsym $mod+XF86MonBrightnessDown exec "light -U 5; notify-send `light` -t 1000"
+bindsym XF86MonBrightnessUp exec "light -A 10; notify-send `printf '%.*f\n' 0 $(light)` -t 1000"
+bindsym XF86MonBrightnessDown exec "light -U 10; notify-send `printf '%.*f\n' 0 $(light)` -t 1000"
+bindsym $mod+XF86MonBrightnessUp exec "light -A 5; notify-send `printf '%.*f\n' 0 $(light)` -t 1000"
+bindsym $mod+XF86MonBrightnessDown exec "light -U 5; notify-send `printf '%.*f\n' 0 $(light)` -t 1000"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -140,9 +140,6 @@ bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
 # Workspace names
-# to display names or symbols instead of plain workspace numbers you can use
-# something like: set $ws1 1:mail
-#                 set $ws2 2:
 # Firefox, terminals, etc...
 set $ws1 1:
 
@@ -199,10 +196,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # --- Open applications on specific workspaces --- #
 # ------------------------------------------------ #
 
-
 assign [class="Firefox"] $ws1
-
-# VS Code & IntelliJ IDEA
 assign [class="jetbrains-idea-ce"] $ws2
 assign [class="Unity"] $ws2
 assign [class="GitKraken"] $ws3
@@ -210,7 +204,6 @@ assign [class="Slack"] $ws4
 assign [title="Discord"] $ws4
 assign [class="Thunderbird"] $ws5
 for_window [class="Spotify"] move to workspace $ws6
-
 
 # ------------------------------------------------- #
 # ------------------------------------------------- #
@@ -287,10 +280,6 @@ mode "$mode_system" {
 bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 5 px or 5 ppt
         bindsym k resize grow height 5 px or 5 ppt
         bindsym l resize shrink height 5 px or 5 ppt
@@ -318,11 +307,10 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-#systemctl --user enable redshift-gtk
-exec --no-startup-id redshift-gtk
+# When geoclue-2.0 starts working, uncomment below
+# exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
-## Load wallpaper
+# Load wallpaper
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
 exec --no-startup-id manjaro-hello
@@ -333,9 +321,6 @@ exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 120 -locker blurlock
-exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -473,8 +458,8 @@ mode "$mode_gaps_outer" {
 #
 # PyPlot
 for_window [instance="matplotlib"] floating enable
+# class related - delete when the semester is over
 for_window [title="MP3 Player"] floating enable
-
 
 #
 # --- TEMP CHANGES --- #
