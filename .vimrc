@@ -142,3 +142,5 @@ set expandtab      " tabs are spaces
 set cursorline     " highlight current line
 set incsearch      " search as chars are entered
 " set hlsearch       " highlight matches - WORKING ON IT
+
+colorscheme evening

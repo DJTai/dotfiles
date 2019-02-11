@@ -8,7 +8,7 @@ Xft.lcdfilter: lcddefault
 
 XTerm*background:        #222d31
 XTerm*foreground:        #d8d8d8
-XTerm*pointerColor:      #1ABB9B
+XTerm*pointerColor:      #222222
 XTerm*faceName:          Fixed
 XTerm*faceSize:          11
 XTerm*reverseVideo:      on
@@ -65,7 +65,7 @@ URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
 !! terminus names see end of file!
 
 URxvt.depth:                      32
-URxvt.background:                 [100]#cccccc
+URxvt.background:                 [100]#d2d2d2
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
@@ -149,9 +149,9 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 ! URxvt*troughColor:                color
 ! URxvt*highlightColor:             color
 ! URxvt*highlightTextColor:         color
-! URxvt*cursorColor:                color
+URxvt*cursorColor:                #222222
 ! URxvt*cursorColor2:               color
-! URxvt*pointerColor:               color
+URxvt*pointerColor:               #222222
 ! URxvt*pointerColor2:              color
 ! URxvt*borderColor:                color
 ! URxvt*iconFile:                   file
