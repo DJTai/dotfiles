@@ -1,4 +1,4 @@
-# i3 config file (v4)
+# DJTai's i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
@@ -449,7 +449,7 @@ mode "$mode_gaps_outer" {
 # PyPlot
 for_window [instance="matplotlib"] floating enable
 # class related - delete when the semester is over
-for_window [title="MP3 Player"] floating enable
+for_window [title="Music Player"] floating enable
 
 #
 # --- TEMP CHANGES --- #

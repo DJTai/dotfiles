@@ -141,6 +141,6 @@ set softtabstop=4  " number of spaces in tab when editing
 set expandtab      " tabs are spaces
 set cursorline     " highlight current line
 set incsearch      " search as chars are entered
-" set hlsearch       " highlight matches - WORKING ON IT
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc    " gvim copy -> clipboard
+colorscheme github " better colorscheme
 
-colorscheme evening
