@@ -238,9 +238,14 @@ for_window [instance="Calendar"] floating enable
 for_window [title="Thunderbird Preferences"] floating enable
 for_window [title="About Mozilla Thunderbird"] floating enable
 for_window [instance="Msgcompose" class="Thunderbird"] floating enable
+for_window [instance="Navigator" class="Thunderbird"] floating enable
+for_window [instance="Preferences" class="Thunderbird"] floating enable
 
 # IntelliJ IDEA
 for_window [title="Compare your solution with answer"] floating enable
+
+# Discord
+for_window [title="Discord"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -297,11 +302,13 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Lock screen
+# Blurlock
 bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
+exec --no-startup-id xautolock -time 120 -locker blurlock
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 # When geoclue-2.0 starts working, uncomment below
 # exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
