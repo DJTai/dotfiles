@@ -247,6 +247,10 @@ for_window [title="Compare your solution with answer"] floating enable
 # Discord
 for_window [title="Discord"] floating enable
 
+# Emulator
+for_window [title="Android Emulator*"] floating enable
+
+
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
@@ -301,9 +305,6 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
-# Blurlock
-bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id xautolock -time 120 -locker blurlock
@@ -390,10 +391,10 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #eeee00 #556064 #80FFF9 #FDF6E3 #eeee00
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+  client.focused          #eeee00 #556064 #80fff9 #fdf6e3 #eeee00
+  client.focused_inactive #2f3d44 #2F3D44 #1abc9c #454948
+  client.unfocused        #2f3d44 #2F3D44 #1abc9c #454948
+  client.urgent           #cb4b16 #fdf6E3 #1abc9c #268bd2
   client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
   client.background       #2B2C2B
