@@ -245,7 +245,7 @@ for_window [instance="Preferences" class="Thunderbird"] floating enable
 for_window [title="Compare your solution with answer"] floating enable
 
 # Discord
-for_window [title="Discord"] floating enable
+#for_window [title="Discord"] floating enable
 
 # Emulator
 for_window [title="Android Emulator*"] floating enable
@@ -323,7 +323,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+exec --no-startup-id start_conky_delljaro
 exec_always --no-startup-id fix_xcursor
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -373,16 +373,16 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #DDDDDD
+        background #dddddd
         statusline #000000
         separator  #454947
 
 #                          border  backgr. text
-        focused_workspace  #000000 #EEEEEE #111111
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEEEEE
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+        focused_workspace  #000000 #eeeeee #111111
+        active_workspace   #595b5b #353836 #fdf6e3
+        inactive_workspace #595b5b #222d31 #eeeeee
+        binding_mode       #16a085 #2c2c2c #f9faf9
+        urgent_workspace   #16a085 #fdf6e3 #e5201d
     }
 }
 
@@ -390,14 +390,14 @@ bar {
 bindsym $mod+m bar mode toggle
 
 # Theme colors
-# class                   border  backgr. text    indic.   child_border
-  client.focused          #eeee00 #556064 #80fff9 #fdf6e3 #eeee00
-  client.focused_inactive #2f3d44 #2F3D44 #1abc9c #454948
-  client.unfocused        #2f3d44 #2F3D44 #1abc9c #454948
-  client.urgent           #cb4b16 #fdf6E3 #1abc9c #268bd2
+# class                   border  backgr. text    indic.  child_border
+  client.focused          #eeee00 #555555 #eeeeee #fdf6e3 #ffff16
+  client.focused_inactive #2f3d44 #2f3d44 #cccccc #454948
+  client.unfocused        #2f3d44 #2f3d44 #777777 #454948
+  client.urgent           #cb4b16 #fdf6E3 #ff3333 #268bd2
   client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
-  client.background       #2B2C2B
+  client.background       #2b2b2b
 
 
 #############################
@@ -458,6 +458,7 @@ mode "$mode_gaps_outer" {
 for_window [instance="matplotlib"] floating enable
 # class related - delete when the semester is over
 for_window [title="Music Player"] floating enable
-
+# JavaFX Popup
+for_window [instance="app.Main"] floating enable
 #
 # --- TEMP CHANGES --- #
