@@ -6,11 +6,11 @@ Xft.autohint:  false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-XTerm*background:        #222d31
+XTerm*background:        #222D31
 XTerm*foreground:        #d8d8d8
-XTerm*pointerColor:      #222222
+XTerm*pointerColor:      #1ABB9B
 XTerm*faceName:          Fixed
-XTerm*faceSize:          11
+XTerm*faceSize:          12
 XTerm*reverseVideo:      on
 XTerm*selectToClipboard: true
 
@@ -54,23 +54,27 @@ XTerm*selectToClipboard: true
 *color7:                          #d8d8d8
 *color15:                         #f8f8f8
 
-Xcursor.theme: xcursor-breeze
+Xcursor.theme: Adwaita
 Xcursor.size:                     0
 
-URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
+!Original
+!URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
 
 ! alternative font settings with 'terminus':
-! URxvt.font:      -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
+!URxvt.font:      -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
+!URxvt.font:	xft:TerminessTTFNerdFontMono:size=14
+URxvt.font:	xft:BitstreamVeraSansMono:size=12
+
 ! URxvt.bold.font: -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
 !! terminus names see end of file!
 
 URxvt.depth:                      32
-URxvt.background:                 [100]#d8d8d8
+URxvt.background:                 [100]#222D31
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
 URxvt*background:                 black
-URxvt*foreground:                 black
+URxvt*foreground:                 grey
 URxvt*saveLines:                  5000
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
@@ -149,9 +153,9 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 ! URxvt*troughColor:                color
 ! URxvt*highlightColor:             color
 ! URxvt*highlightTextColor:         color
-URxvt*cursorColor:                #222222
+! URxvt*cursorColor:                color
 ! URxvt*cursorColor2:               color
-URxvt*pointerColor:               #222222
+! URxvt*pointerColor:               color
 ! URxvt*pointerColor2:              color
 ! URxvt*borderColor:                color
 ! URxvt*iconFile:                   file

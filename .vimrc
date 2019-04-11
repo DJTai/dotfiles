@@ -142,5 +142,4 @@ set expandtab      " tabs are spaces
 set cursorline     " highlight current line
 set incsearch      " search as chars are entered
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc    " gvim copy -> clipboard
-colorscheme github " better colorscheme
 

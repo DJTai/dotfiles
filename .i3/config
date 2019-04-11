@@ -47,6 +47,11 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 ################################################################################################
 
+#bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+#bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+#bindsym XF86AudioMute exec amixer -q set Master toggle
+
+
 # Screen brightness controls USING LIGHT
 bindsym XF86MonBrightnessUp exec "light -A 10; notify-send `printf '%.*f\n' 0 $(light)` -t 1000"
 bindsym XF86MonBrightnessDown exec "light -U 10; notify-send `printf '%.*f\n' 0 $(light)` -t 1000"
@@ -233,13 +238,17 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 
-# Thunderbird related
+# Mozilla related
 for_window [instance="Calendar"] floating enable
 for_window [title="Thunderbird Preferences"] floating enable
 for_window [title="About Mozilla Thunderbird"] floating enable
 for_window [instance="Msgcompose" class="Thunderbird"] floating enable
 for_window [instance="Navigator" class="Thunderbird"] floating enable
 for_window [instance="Preferences" class="Thunderbird"] floating enable
+for_window [instance="Enigmail" class="Thunderbird"] floating enable
+
+# Zoom
+for_window [instance="zoom"] floating enable
 
 # IntelliJ IDEA
 for_window [title="Compare your solution with answer"] floating enable
@@ -247,7 +256,7 @@ for_window [title="Compare your solution with answer"] floating enable
 # Discord
 #for_window [title="Discord"] floating enable
 
-# Emulator
+# Android Emulator
 for_window [title="Android Emulator*"] floating enable
 
 
@@ -323,7 +332,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_delljaro
+exec --no-startup-id start_conky_maia
 exec_always --no-startup-id fix_xcursor
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -369,20 +378,20 @@ bar {
 
 	bindsym button4 nop
 	bindsym button5 nop
-    # font xft:URWGothic-Book 11
+        font xft:URWGothic-Book 11
 	strip_workspace_numbers yes
 
     colors {
-        background #dddddd
-        statusline #000000
+        background #222D31
+        statusline #F9FAF9
         separator  #454947
 
-#                          border  backgr. text
-        focused_workspace  #000000 #eeeeee #111111
-        active_workspace   #595b5b #353836 #fdf6e3
-        inactive_workspace #595b5b #222d31 #eeeeee
-        binding_mode       #16a085 #2c2c2c #f9faf9
-        urgent_workspace   #16a085 #fdf6e3 #e5201d
+#                      	   border  backgr. text    child border
+        focused_workspace  #F9FAF9 #16a085 #292F34 #eeeeee
+        active_workspace   #595B5B #353836 #FDF6E3
+        inactive_workspace #595B5B #222D31 #EEE8D5
+        binding_mode       #16a085 #2C2C2C #F9FAF9
+        urgent_workspace   #16a085 #FDF6E3 #E5201D
     }
 }
 
@@ -391,13 +400,13 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.  child_border
-  client.focused          #eeee00 #555555 #eeeeee #fdf6e3 #ffff16
-  client.focused_inactive #2f3d44 #2f3d44 #cccccc #454948
-  client.unfocused        #2f3d44 #2f3d44 #777777 #454948
-  client.urgent           #cb4b16 #fdf6E3 #ff3333 #268bd2
+  client.focused          #556064 #556064 #80FFF9 #FDF6E3 #62eace
+  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
-  client.background       #2b2b2b
+  client.background       #2B2C2B
 
 
 #############################
