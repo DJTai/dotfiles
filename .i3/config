@@ -41,22 +41,22 @@ bindsym $mod+z exec --no-startup-id morc_menu
 
 exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+#exec --no-startup-id amixer sset 'Master' 90
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
-#bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
-#bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
-#bindsym XF86AudioMute exec amixer -q set Master toggle
-
+# Set headphones and speaker volume on startup
+exec --no-startup-id amixer set 'Headphone' 84 -qM
+exec --no-startup-id amixer set 'Speaker' 84 -qM
 
 # Screen brightness controls USING LIGHT
-bindsym XF86MonBrightnessUp exec "light -A 10; notify-send `printf '%.*f\n' 0 $(light)` -t 1000"
-bindsym XF86MonBrightnessDown exec "light -U 10; notify-send `printf '%.*f\n' 0 $(light)` -t 1000"
-bindsym $mod+XF86MonBrightnessUp exec "light -A 5; notify-send `printf '%.*f\n' 0 $(light)` -t 1000"
-bindsym $mod+XF86MonBrightnessDown exec "light -U 5; notify-send `printf '%.*f\n' 0 $(light)` -t 1000"
+bindsym XF86MonBrightnessUp exec "light -A 10; notify-send `printf '~~%.*f%%\n' 0 $(light)` -t 1000"
+bindsym XF86MonBrightnessDown exec "light -U 10; notify-send `printf '~~%.*f%%\n' 0 $(light)` -t 1000"
+bindsym $mod+XF86MonBrightnessUp exec "light -A 5; notify-send `printf '~~%.*f%%\n' 0 $(light)` -t 1000"
+bindsym $mod+XF86MonBrightnessDown exec "light -U 5; notify-send `printf '~~%.*f%%\n' 0 $(light)` -t 1000"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -105,8 +105,8 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+h split h;exec notify-send -t 1000 'tile horizontally'
+bindsym $mod+v split v;exec notify-send -t 1000 'tile vertically'
 bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
@@ -140,7 +140,7 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
-# Workspace names
+# Workspace names; icons from https://fontawesome.com/cheatsheet
 # Firefox, terminals, etc...
 set $ws1 1:
 
@@ -465,6 +465,7 @@ mode "$mode_gaps_outer" {
 #
 # PyPlot
 for_window [instance="matplotlib"] floating enable
+
 # class related - delete when the semester is over
 for_window [title="Music Player"] floating enable
 # JavaFX Popup
