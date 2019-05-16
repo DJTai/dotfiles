@@ -204,7 +204,7 @@ assign [class="GitKraken"] $ws3
 assign [class="Slack"] $ws4
 assign [title="Discord"] $ws4
 assign [class="Thunderbird"] $ws5
-for_window [class="Spotify"] move to workspace $ws6
+for_window [title="Spotify"] move to workspace $ws6
 
 # ------------------------------------------------- #
 # ------------------------------------------------- #
