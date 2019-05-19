@@ -1,0 +1,29 @@
+[user]
+	name = DJTai
+	email = djtai@protonmail.com
+
+[alias]
+    lg = !"git lg1"
+    lg1 = !"git lg1-specific --all"
+    lg2 = !"git lg2-specific --all"
+    lg3 = !"git lg3-specific --all"
+
+    # C:    (color) ___ C(reset)
+    # h:    abbrev hash
+    # ar:   author date, relative
+    # an:   author name
+    # ae:   author email
+    # cD:   committer date
+    # cn:   committer name
+    # ce:   committer email
+    # s:    subject
+    # d:    ref names
+
+    lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+    
+    lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)- <%an>%C(reset)'# --date=short
+    
+    lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)' --date=short
+
+    lg4 = log --graph --pretty=format:'%C(bold red)%h%Creset - (%ad) %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
+    hist = log --graph --full-history --all --pretty=format:'%C(bold red)%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
