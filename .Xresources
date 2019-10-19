@@ -8,9 +8,10 @@ Xft.lcdfilter: lcddefault
 
 XTerm*background:        #222D31
 XTerm*foreground:        #d8d8d8
-XTerm*pointerColor:      #1ABB9B
+!XTerm*pointerColor:      #1ABB9B
+XTerm*pointerColor:      #043c4c
 XTerm*faceName:          Fixed
-XTerm*faceSize:          12
+XTerm*faceSize:          11
 XTerm*reverseVideo:      on
 XTerm*selectToClipboard: true
 
@@ -18,7 +19,7 @@ XTerm*selectToClipboard: true
 *foreground:                      #d8d8d8
 *fading:                          8
 *fadeColor:                       black
-*cursorColor:                     #1ABB9B
+*cursorColor:                     #660f13
 *pointerColorBackground:          #2B2C2B
 *pointerColorForeground:          #16A085
 
@@ -54,17 +55,13 @@ XTerm*selectToClipboard: true
 *color7:                          #d8d8d8
 *color15:                         #f8f8f8
 
-Xcursor.theme: Adwaita
+Xcursor.theme: Maia-Cursor
 Xcursor.size:                     0
 
-!Original
-!URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
+URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
 
 ! alternative font settings with 'terminus':
-!URxvt.font:      -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
-!URxvt.font:	xft:TerminessTTFNerdFontMono:size=14
-URxvt.font:	xft:BitstreamVeraSansMono:size=12
-
+! URxvt.font:      -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
 ! URxvt.bold.font: -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
 !! terminus names see end of file!
 
@@ -78,9 +75,9 @@ URxvt*foreground:                 grey
 URxvt*saveLines:                  5000
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
-! URxvt*inheritPixmap:            true
-! URxvt*transparent:              true
-! URxvt*shading:                  138
+URxvt*inheritPixmap:            true
+URxvt*transparent:              true
+URxvt*shading:                  50
 
 ! Normal copy-paste keybindings without perls
 URxvt.iso14755:                   false

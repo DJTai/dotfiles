@@ -1,12 +1,4 @@
-" The default vimrc file + edits at line 137
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2017 Jun 13
-"
-" This is loaded if no vimrc file was found.
-" Except when Vim is run with "-u NONE" or "-C".
-" Individual settings can be reverted with ":set option&".
-" Other commands can be reverted as mentioned below.
+" The default vimrc file + edits at line 129
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -137,9 +129,14 @@ endif
 " --- My Edits --- "
 set number         " Show line numbers
 set tabstop=4      " number of visual spaces per TAB
-set softtabstop=4  " number of spaces in tab when editing
+set softtabstop=4  " delete tabs
 set expandtab      " tabs are spaces
 set cursorline     " highlight current line
-set incsearch      " search as chars are entered
-autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc    " gvim copy -> clipboard
+set autoindent     " Autoindent when coding
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc  " Markdown
+set wildmenu       " Tab for graphical menu of all the matches
+set showmatch      " Highlight matching [{()}]
 
+" --- Movements --- "
+nnoremap j gj
+nnoremap k gk

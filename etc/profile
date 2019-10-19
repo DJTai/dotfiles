@@ -38,9 +38,3 @@ unset TERMCAP
 
 # Man is much better than us at figuring this out
 unset MANPATH
-
-export JAVA_HOME=/usr/lib/jvm/java-11-jdk
-export PATH=$JAVA_HOME/bin:$PATH
-export ANDROID_HOME=~/Android/Sdk
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-
