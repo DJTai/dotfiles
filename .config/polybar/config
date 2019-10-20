@@ -46,18 +46,30 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
+; ws-icon-[0-9]+ = label;icon
+; NOTE: The label needs to match the name of the i3 workspace
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;♜
+ws-icon-3 = 4;♝
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
+; you must also define a ws-icon-5.
+; NOTE: Icon will be available as the %icon% token inside label-*
+
 label-mode-padding = 2
 label-mode-foreground = #1e1e20
 label-mode-background = #e39866
 
-label-focused = %index%
+label-focused = %icon%
 label-focused-background = #dc7f41
-label-focused-foreground = #6b7443
+label-focused-foreground = #1e1e20
 label-focused-padding = 2
 
-label-unfocused = %index%
+label-unfocused = %icon%
 label-unfocused-background = #e39866
-label-unfocused-foreground = #1e1e20
+label-unfocused-foreground = #323533
 label-unfocused-padding = 2
 
 label-visible = %index%
@@ -65,8 +77,8 @@ label-visible-background = #e39866
 label-visible-foreground = #1e1e20
 label-visible-padding = 2
 
-label-urgent = %index%
-label-urgent-background = #BA2922
+label-urgent = %icon%
+label-urgent-background = #ba2922
 label-urgent-padding = 2
 
 
@@ -195,11 +207,10 @@ label-disconnected-foreground = #66ffffff
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+date-alt =
+date = " %Y-%m-%d"
 
 time = %H:%M
-time-alt = %H:%M:%S
 
 format-prefix = 
 format-foreground = #1e1e20

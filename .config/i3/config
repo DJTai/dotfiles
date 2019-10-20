@@ -30,7 +30,8 @@ bindsym $mod+Shift+q kill
 
 # start program launcher <rofi|dmenu_recency>
 # colors edited in: ???
-bindsym $mod+d exec --no-startup-id rofi -show run
+#bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym  $mod+d exec --no-startup-id rofi -show run
 
 # launch categorized menu
 # colors edited in: ???
