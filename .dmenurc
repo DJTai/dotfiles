@@ -6,16 +6,13 @@
 DMENU_FN="Noto-10.5"
 
 ## background colour for unselected menu-items
-# Dark cyan
-DMENU_NB="#043c4c"
+DMENU_NB="#1e1e20"
 
 ## textcolour for unselected menu-items
-# Very light shade of green
 DMENU_NF="#f9faf9"
 
 ## background colour for selected menu-items
-# Dark pink-red
-DMENU_SB="#6f0c0f"
+DMENU_SB="#b06534"
 
 ## textcolour for selected menu-items
 DMENU_SF="#f9faf9"

@@ -1,10 +1,14 @@
 # dotfiles
 
-## My laptop
-- **OS:** Manjaro Linux
-- **WM:** i3
-- **Shell:** bash
+**Don't reinvent the wheel**.
+My overall theme was jumpstarted from unix121's [i3wm-themer](https://github.com/unix121/i3wm-themer). The steps to utilize this wonderful tool can be found [here](https://github.com/unix121/i3wm-themer#using-the-script).
+
+## My Specs
+- **OS:** [Manjaro](https://manjaro.org/)
+- **WM:** i3[\*](https://manjaro.org/download/community/i3/)
+- **Shell:** [bash](https://www.gnu.org/software/bash/)
 - **Terminal:** urxvt
+- **Status Bar:** [polybar](https://github.com/polybar/polybar)
 
 **NOTE**: Copy + paste *at your own risk*. I recommend that you use my files as a reference, i.e., don't just replace your file with mine. Please backup your files before you attempt to change anything on your computer.
 
