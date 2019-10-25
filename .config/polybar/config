@@ -29,7 +29,7 @@ font-3 = "Font Awesome 5 Brands:style=Regular:size=10;1"
 ;-------------;
 modules-left = i3
 modules-center = date
-modules-right = alsa nm-launcher wlan battery powermenu
+modules-right = alsa nm-launcher wlan vpn battery powermenu
 
 tray-position = 
 ;tray-padding =
@@ -48,11 +48,17 @@ wrapping-scroll = false
 
 ; ws-icon-[0-9]+ = label;icon
 ; NOTE: The label needs to match the name of the i3 workspace
+;-- terminal, browser
 ws-icon-0 = 1;
+;-- code stuff
 ws-icon-1 = 2;
-ws-icon-2 = 3;♜
-ws-icon-3 = 4;♝
+;-- gitkraken?
+ws-icon-2 = 3;
+;-- comms, e.g., discord, slack
+ws-icon-3 = 4;
+;-- email
 ws-icon-4 = 5;
+;-- spotify & music
 ws-icon-5 = 6;
 ; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
 ; you must also define a ws-icon-5.
@@ -140,17 +146,17 @@ format-volume = <ramp-volume> <label-volume>
 
 ; Available tokens:
 ;   %percentage% (default)
-;label-volume = %percentage%%
+label-volume = %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
-label-muted = 🔇 muted
+label-muted =  muted
 label-muted-foreground = #66
 
 ; Only applies if <ramp-volume> is used
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 ; If defined, it will replace <ramp-volume> when
 ; headphones are plugged in to `headphone_control_numid`
@@ -171,13 +177,13 @@ click-left = nm-connection-editor
 [module/wlan]
 type = internal/network
 interface = wlp1s0
-interval = 2.0
+interval = 5.0
 accumulate-stats = true
 
 format-connected = <label-connected>
 format-connected-foreground = #e6a57a
 format-connected-background = #1e1e20
-format-connected-padding = 1
+format-connected-padding = 0 
 
 format-disconnected = <label-disconnected>
 
@@ -197,7 +203,15 @@ label-connected-foreground = #eefafafa
 
 ; Default: (none)
 label-disconnected = not connected
-label-disconnected-foreground = #66ffffff
+label-disconnected-foreground = #66ffff
+
+[module/vpn]
+type = custom/script
+exec = /home/djtai/bin/pvpn-ip.sh
+interval = 60
+
+format = <label>
+label = %output%
 
 
 ;------------;

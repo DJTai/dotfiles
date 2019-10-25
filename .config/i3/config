@@ -160,7 +160,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 assign [class="Firefox"] $ws1
 assign [class="[Cc]ode"] $ws2
 assign [class="jetbrains-idea-ce"] $ws2
-assign [class="Unity"] $ws2
 assign [class="GitKraken"] $ws3
 assign [class="Slack"] $ws4
 assign [title="Discord"] $ws4
