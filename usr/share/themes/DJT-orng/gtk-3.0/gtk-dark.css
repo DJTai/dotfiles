@@ -327,9 +327,9 @@ entry:drop(active):focus, entry:drop(active) {
 }
 
 .osd entry:focus {
-  color: #ffffff;
+  color: #cccccc;
   border-color: rgba(11, 11, 11, 0.42);
-  background-color: #F0544C;
+  background-color: #1c1c1c;
 }
 
 .osd entry:disabled {
@@ -338,8 +338,8 @@ entry:drop(active):focus, entry:drop(active) {
 }
 
 .osd entry selection:focus, .osd entry selection {
-  color: #F0544C;
-  background-color: #ffffff;
+  color: #eeeeee;
+  background-color: #dc7f41;
 }
 
 entry progress {
@@ -414,7 +414,7 @@ button:hover {
 button:active, button:checked {
   color: #ffffff;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: #F0544C;
+  background-color: #dc7f41;
   background-clip: padding-box;
   transition-duration: 50ms;
 }
@@ -543,7 +543,7 @@ button.osd:disabled {
   background-clip: padding-box;
   color: #ffffff;
   border-color: rgba(11, 11, 11, 0.42);
-  background-color: #F0544C;
+  background-color: #dc7f41;
 }
 
 .osd button:disabled {
@@ -575,7 +575,7 @@ button.osd:disabled {
 .osd button.flat:active, .osd button.sidebar-button:active, .osd PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:active, .osd button.budgie-menu-launcher:active, .osd .budgie-panel #tasklist-button:active, .budgie-panel .osd #tasklist-button:active, .osd button.flat:checked, .osd button.sidebar-button:checked, .osd PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:checked, .osd button.budgie-menu-launcher:checked, .osd .budgie-panel #tasklist-button:checked, .budgie-panel .osd #tasklist-button:checked {
   color: #ffffff;
   border-color: rgba(11, 11, 11, 0.42);
-  background-color: #F0544C;
+  background-color: #dc7f41;
 }
 
 .osd .linked:not(.vertical):not(.path-bar) > button:hover:not(:checked):not(:active):not(:only-child),
@@ -2481,7 +2481,7 @@ treeview.view header.button.dnd:active {
   padding: 0 6px;
   transition: none;
   color: #ffffff;
-  background-color: #F0544C;
+  background-color: #dc7f41;
   border-radius: 0;
   border-style: none;
 }
@@ -2509,7 +2509,7 @@ menubar > menuitem,
 
 menubar > menuitem:hover,
 .menubar > menuitem:hover {
-  background-color: #F0544C;
+  background-color: #dc7f41;
   color: #ffffff;
 }
 
@@ -2566,13 +2566,13 @@ menu menuitem,
   min-height: 16px;
   min-width: 40px;
   padding: 5px;
-  color: #b5abab;
+  color: #cccccc;
 }
 
 menu menuitem:hover,
 .menu menuitem:hover {
   color: #ffffff;
-  background-color: #F0544C;
+  background-color: #dc7f41;
 }
 
 menu menuitem:disabled,
@@ -4909,7 +4909,7 @@ modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover, .nemo-window .sidebar .view:selected, .nemo-window .sidebar .view:selected:hover, .nemo-window .sidebar row:selected, .nemo-window .sidebar row:selected:hover {
-  background-color: #F0544C;
+  background-color: #dc7f41;
 }
 
 row:selected label, label:selected, .view:selected, .view:selected:focus, textview text:selected, iconview:selected, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:selected, textview text:selected:focus, iconview:selected:focus, textview text selection:focus, textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
@@ -6423,7 +6423,7 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
 
 window.background.chromium {
   background-color: #222222;
-  color: #cbbfbf;
+  color: #cccccc;
 }
 
 window.background.chromium headerbar.titlebar button.toggle {
@@ -6493,23 +6493,24 @@ window.background.chromium > menubar > menuitem {
 }
 
 window.background.chromium > menu {
-  border: 1px solid #dddddd;
-  background-color: white;
+  border: 1px solid #222222;
+  background-color: #222222;
   color: #686868;
 }
 
-window.background.chromium > menu > separator {
+/*window.background.chromium > menu > separator {
   color: white;
   background-color: white;
 }
+*/
 
 window.background.chromium > menu > menuitem {
-  color: #686868;
+  color: #dddddd;
 }
 
 window.background.chromium > menu > menuitem:hover {
   color: #ffffff;
-  background-color: #F0544C;
+  background-color: #dc7f41;
 }
 
 window.background.chromium > menu > menuitem:disabled {
