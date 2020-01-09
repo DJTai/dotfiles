@@ -14,10 +14,8 @@ My overall theme was jumpstarted from unix121's [i3wm-themer](https://github.com
 
 
 
-
 ### dotfiles?
 I assume you know what dotfiles are, but if you don't then that's okay. Basically, dotfiles are text-based configuration files, i.e., they store the settings of your applications.
-
 
 
 
@@ -26,7 +24,6 @@ I assume you know what dotfiles are, but if you don't then that's okay. Basicall
 - All of the files and folders that begin with a `.` are typically found in your home direcory. For example, if your username on your computer is `XYZ`, then you would find `.config` at:
     - `/home/XYZ/.config` or simply `~/.config`
 - The `etc` folder and `usr` folder are found at `/`, i.e., `/etc` and `/usr`
-
 
 
 

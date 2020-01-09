@@ -1,22 +1,32 @@
 conky.config = {
-	alignment = 'top_right',
+
 	background = true,
-	color2 = '5d7b86',
+	update_interval = 2.0,
+
+	-- Info Settings
 	cpu_avg_samples = 2,
-	default_color = 'f9faf9',
 	double_buffer = true,
-	font = 'Bitstream Vera Sans:size=8',
-	draw_shades = false,
-	gap_x = 25,
-	gap_y = 50,
-	minimum_width = 200,
 	no_buffers = true,
+	
+	-- Window Settings
+	alignment = 'top_right',
 	own_window = true,
 	own_window_type = 'override',
 	own_window_transparent = true,
-	update_interval = 1.0,
+	
+	gap_x = 25,
+	gap_y = 50,
+	minimum_width = 200,
+
+	-- Display Settings
 	use_xft = true,
-}
+	default_color = 'f9faf9',
+	font = 'Bitstream Vera Sans:size=8',
+	draw_shades = false,
+
+	-- Local Vars
+	color2 = '5d7b86',
+};
 conky.text = [[
 # ----------------------------- #
 # ------- General order ------- #
@@ -40,10 +50,10 @@ ${goto 10}$color2${top_mem name 4}$alignr$color${top_mem mem_res 4}
 ${goto 10}$color2${top_mem name 5}$alignr$color${top_mem mem_res 5}
 #
 ## LINUX DISTRO
-${voffset 15}${font Noto Sans:size=10}$alignc${execi 10000 awk -F= '/TION/ {print $2}' /etc/lsb-release |sed 's/"//g'} \
+#${voffset 15}${font Noto Sans:size=10}$alignc${execi 10000 awk -F= '/TION/ {print $2}' /etc/lsb-release |sed 's/"//g'} \
 #
 ## RELEASE & CODENAME
-#${font Noto Sans:size=10}${execi 10000 awk -F= '/EASE=/ {printf $2" "} /NAME/ {print $2}' /etc/lsb-release}
+#${goto 10}${color2}${font Bitstream Vera Sans:size=10}release: $alignr${color}${execi 10000 awk -F= '/EASE=/ {printf $2" "} /NAME/ {print $2}' /etc/lsb-release}
 #
 ## ME
 #${voffset 10}${color2}${font Noto Sans:size=10}${alignr}${execi 1200 whoami}@${nodename}
@@ -53,7 +63,6 @@ ${voffset 15}${font Noto Sans:size=10}$alignc${execi 10000 awk -F= '/TION/ {prin
 ${goto 10}${color2}${font Bitstream Vera Sans:size=10}uptime: $alignr${color}${uptime_short}
 ## KERNEL
 #${voffset 5}
-${goto 10}${color2}${font Bitstream Vera Sans:size=10}kernel: $alignr${color}${kernel}
-
+#${goto 10}${color2}${font Bitstream Vera Sans:size=10}kernel: $alignr${color}${kernel}
 
 ]]
