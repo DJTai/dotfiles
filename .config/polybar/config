@@ -211,7 +211,7 @@ label-disconnected-foreground = #66ffff
 [module/vpn]
 type = custom/script
 exec = /home/djtai/bin/pvpn_ip.sh
-interval = 120
+interval = 30
 format = <label>
 label = %output%
 
