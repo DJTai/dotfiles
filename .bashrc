@@ -14,6 +14,10 @@
 # \$  EUID == 0 ? # : $
 # \[  Begin a seq of non-printing chars
 # \]  End a seq of non-printing chars
+# \e[ Color prompt
+
+# Colors used
+# 0;32m
 
 [[ $- != *i* ]] && return
 
@@ -90,7 +94,17 @@ if ${use_color} ; then
 	if [[ ${EUID} == 0 ]] ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 	else
-        PS1='\[\e[0;32m\]\[\e[0m\e[0;32m\]\u @ \[\e[0:31m\]\W\[\e[0;35m\]$(__git_ps1)\n\[\e[0;32m\]└─\[\e[0m\e[0;32m\] \$\[\e[0m\e[0;32m\] ▶\[\e[0m\] '
+        #PS1='\[\e[0;35m\]\[\e[0m'  # Make green
+        PS1='\e[0;32m\]'             # change to green
+        PS1=$PS1'\u @ '              # user @
+        PS1=$PS1'\[\e[0:31m\]'       # change to red
+        PS1=$PS1'\W'                 # $PWD
+        PS1=$PS1'\[\e[0;35m\]'       # change to pink
+        PS1=$PS1'$(__git_ps1)'       # git stuff
+        PS1=$PS1'\n\[\e[0;32m\]'     # new line & change to green
+        PS1=$PS1'└─'                 # fancy
+        #PS1=$PS1' \$\[\e[0m\e[0;32m\] ▶\[\e[0m\] '
+        PS1=$PS1' \$ ▶\[\e[0m\] '    # $ >
 	fi
 
 	alias ls='ls --color=auto'
@@ -159,3 +173,12 @@ ex ()
 
 # better yaourt colors
 #export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
+
+alias eskedit='sudo pacman -Syu'
+alias ll='ls -lh'
+alias pvpnf='sudo protonvpn c -f'
+alias pvpnd='sudo protonvpn d'
+alias pvpnr='sudo protonvpn c -r'
+alias g='git'
+
+
