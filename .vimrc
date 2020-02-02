@@ -138,10 +138,11 @@ set wildmenu       " Tab for graphical menu of all the matches
 set showmatch      " Highlight matching [{()}]
 nmap <C-n> :NERDTreeToggle<CR>
 
-
-" Plugins will be downloaded under the specified directory.
+"------------------------------------------------------------"
+" vim-plug → https://github.com/junegunn/vim-plug            "
+" Plugins will be downloaded under the specified directory.  "
+"------------------------------------------------------------"
 call plug#begin('~/.vim/plugged')
-
 " Declare the list of plugins.
 "Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdtree'
@@ -150,8 +151,14 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
+" Open NERDTree automatically even if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-
+" ----------------- "
 " --- Movements --- "
-nnoremap j gj
-nnoremap k gk
+" ----------------- "
+" g<mv> → Move one physical line
+"nnoremap j gj
+"nnoremap k gk
+
