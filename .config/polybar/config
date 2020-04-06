@@ -32,7 +32,7 @@ font-3 = "Font Awesome 5 Brands:style=Regular:size=12;2"
 ;-------------;
 modules-left = nm-launcher vpn wlan
 modules-center = i3
-modules-right = calendar alsa battery redshift powermenu
+modules-right = alsa calendar battery redshift powermenu
 
 tray-position = 
 ;tray-padding =
@@ -211,7 +211,7 @@ label-disconnected-foreground = #66ffff
 [module/vpn]
 type = custom/script
 exec = /home/djtai/bin/pvpn_ip.sh
-interval = 30
+interval = 5
 format = <label>
 label = %output%
 
@@ -277,7 +277,7 @@ format-charging = <animation-charging> <label-charging>
 ;   <bar-capacity>
 ;   <ramp-capacity>
 ;   <animation-discharging>
-format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = <label-discharging> <ramp-capacity>
 
 ; Available tags:
 ;   <label-full> (default)

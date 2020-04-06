@@ -7,9 +7,9 @@ endif
 
 " Bail out if something that ran earlier, e.g. a system wide vimrc, does not
 " want Vim to use these default values.
-if exists('skip_defaults_vim')
-  finish
-endif
+"if exists('skip_defaults_vim')
+ " finish
+"endif
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -159,6 +159,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " --- Movements --- "
 " ----------------- "
 " g<mv> → Move one physical line
-"nnoremap j gj
-"nnoremap k gk
+nnoremap j gj
+nnoremap k gk
 

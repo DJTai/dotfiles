@@ -286,6 +286,7 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
 
+exec --no-startup-id /$HOME/bin/init_vpn.sh
 
 
 # Theme colors
