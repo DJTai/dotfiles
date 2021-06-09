@@ -29,12 +29,11 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher <rofi|dmenu_recency>
-# colors edited in: ???
-#bindsym $mod+d exec --no-startup-id rofi -show run
+# colors edited in: .Xresources
 bindsym  $mod+d exec --no-startup-id rofi -show run
 
 # launch categorized menu
-# colors edited in: ???
+# colors edited in: .dmenurc
 bindsym $mod+z exec --no-startup-id morc_menu
 
 # ---------------------------------- #
@@ -114,6 +113,7 @@ bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
 # workspaces
+# -- icons found in polybar config
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -171,10 +171,12 @@ for_window [title="Spotify"] move to workspace $ws6
 # ------------------------------------------------- #
 #for_window [title="alsamixer"] floating enable border pixel 1
 #for_window [class="Calamares"] floating enable border normal
+for_window [title="calendar"] floating enable border pixel 1
 #for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
+for_window [title=gtk3-widget-factory"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-gtk-greeter-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
@@ -261,24 +263,39 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Autostart applications
+
+##########################
+# Autostart applications #
+##########################
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id amixer -q set Master mute
+exec --no-startup-id redshift-gtk
+
+# Applets #
+###########
 exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
+# exec --no-startup-id pamac-tray
+# exec --no-startup-id clipit
+exec --no-startup-id mate-power-manager
+
+# ??? #
+#######
 exec --no-startup-id start_my_conky
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
 
+exec --no-startup-id /$HOME/bin/init_vpn.sh
+
+
 # Theme colors
 # class                   border  backgr. text    indic.  child_border
-  client.focused          #e39866 #1e1e20 #e39866 #e39866 #eeeeee
-  client.focused_inactive #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
-  client.unfocused        #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
-  client.urgent           #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
-  client.placeholder      #e39866 #1e1e20 #e39866 #dc7f41 #dc7f41
+  client.focused          #eeeeee #1e1e20 #cccccc #eeeeee #eeeeee
+  client.focused_inactive #b5bd68 #1e1e20 #cccccc #b5bd68 #b5bd68
+  client.unfocused        #81a2be #1e1e20 #cccccc #81a2be #81a2be
+  client.urgent           #cc6666 #1e1e20 #cccccc #cc6666 #cc6666
+  client.placeholder      #b5bd68 #1e1e20 #cccccc #b5bd68 #b5bd68
 
   client.background       #1e1e20
 
@@ -325,8 +342,6 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# set power-manager and volume control
-exec --no-startup-id mate-power-manager
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 0 -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 0 -q set Master 2db- unmute

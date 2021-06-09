@@ -27,3 +27,6 @@
 
     lg4 = log --graph --pretty=format:'%C(bold red)%h%Creset - (%ad) %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
     hist = log --graph --full-history --all --pretty=format:'%C(bold red)%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
+
+[merge "ours"]
+	driver = true

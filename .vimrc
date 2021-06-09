@@ -7,9 +7,9 @@ endif
 
 " Bail out if something that ran earlier, e.g. a system wide vimrc, does not
 " want Vim to use these default values.
-if exists('skip_defaults_vim')
-  finish
-endif
+"if exists('skip_defaults_vim')
+ " finish
+"endif
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -27,10 +27,10 @@ silent! endwhile
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
 
-set history=200		" keep 200 lines of command line history
+set history=200 " keep 200 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
-set wildmenu		" display completion matches in a status line
+set wildmenu	" display completion matches in a status line
 
 set ttimeout		" time out for key codes
 set ttimeoutlen=100	" wait up to 100ms after Esc for special key
@@ -136,7 +136,29 @@ set autoindent     " Autoindent when coding
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc  " Markdown
 set wildmenu       " Tab for graphical menu of all the matches
 set showmatch      " Highlight matching [{()}]
+nmap <C-n> :NERDTreeToggle<CR>
 
+"------------------------------------------------------------"
+" vim-plug → https://github.com/junegunn/vim-plug            "
+" Plugins will be downloaded under the specified directory.  "
+"------------------------------------------------------------"
+call plug#begin('~/.vim/plugged')
+" Declare the list of plugins.
+"Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+" Open NERDTree automatically even if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" ----------------- "
 " --- Movements --- "
+" ----------------- "
+" g<mv> → Move one physical line
 nnoremap j gj
 nnoremap k gk
+
